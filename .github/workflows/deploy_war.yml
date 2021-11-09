@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Create folder for frontend
-        run: 'mkdir su_frontend'
+        run: 'mkdir /su_frontend'
       - name: test
         run: "ls"
       - name: Checkout frontend repo TeachUAClient
@@ -19,7 +19,7 @@ jobs:
       - name: Build frontend
         run: "CI=false npm run build"
       - name: copy frontend to frontend folder
-        run: 'cp build/* su_frontend'
+        run: 'cp build/* /su_frontend'
       # - name: test
       #   run: 'ls'
       # - name: test2
