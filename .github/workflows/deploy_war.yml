@@ -1,0 +1,13 @@
+name: Build War
+on:
+  push:
+    tags:
+       - 'deploy_dev'
+jobs:
+  uploader:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out my other private repo
+        uses: actions/checkout@develop
+        with:
+          repository: ita-social-projects/TeachUAClient
