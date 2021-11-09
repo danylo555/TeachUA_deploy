@@ -2,7 +2,8 @@ name: Build War
 on:
   push:
 jobs:
-  uploader:
+  prcheck:
+    if: github.event.label.name == 'deploy_dev'
     runs-on: ubuntu-latest
     steps:
       - name: Create folder for frontend
