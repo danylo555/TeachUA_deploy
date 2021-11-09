@@ -5,10 +5,16 @@ jobs:
   uploader:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out my other private repo
+      - name: Checkout TeachUAClient branch
         uses: actions/checkout@v2
         with:
           repository: ita-social-projects/TeachUAClient
           ref: develop
-      - name:
-        run : "ls -la"
+      - name: Install dependencies
+        run: "npm install"
+      - name: Build frontend
+        run: "npm run build"
+      - name: test
+        run: "ls"
+      - name: test2
+        run: "pwd"
