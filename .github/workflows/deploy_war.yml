@@ -17,7 +17,7 @@ jobs:
       - name: Build frontend
         run: "CI=false npm run build"
       - name: copy frontend to frontend folder
-        run: 'cp build/* frontend'
+        run: 'cp build/* su_frontend'
       # - name: test
       #   run: 'ls'
       # - name: test2
