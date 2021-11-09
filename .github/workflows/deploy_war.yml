@@ -5,24 +5,30 @@ jobs:
   uploader:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout frontend TeachUAClient
+      - name: Create folder for frontend
+        run: 'mkdir su_frontend'
+      - name: Checkout frontend repo TeachUAClient
         uses: actions/checkout@v2
         with:
           repository: ita-social-projects/TeachUAClient
           ref: develop
-      # - name: Install dependencies
-      #   run: "npm install"
-      # - name: Build frontend
-      #   run: "CI=false npm run build"
-      - name: test
-        run: "ls"
-      - name: test2
-        run: "pwd"
-      - name: Checkout backend TeachUA
+      - name: Install dependencies
+        run: "npm install"
+      - name: Build frontend
+        run: "CI=false npm run build"
+      - name: copy frontend to frontend folder
+        run: 'cp build/* frontend'
+      # - name: test
+      #   run: 'ls'
+      # - name: test2
+      #   run: 'pwd'
+      - name: Checkout backend repo TeachUA
         uses: actions/checkout@v2
         with:
           repository: ita-social-projects/TeachUA
           ref: rest
+      - name: Build war
+        run: 'mvn package -DskipTests'
       - name: test
         run: "ls"
       - name: test2
