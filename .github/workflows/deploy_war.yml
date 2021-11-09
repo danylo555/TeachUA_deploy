@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Create folder for frontend
-        run: 'su mkdir /su_frontend'
+        run: 'sudo mkdir /su_frontend'
       - name: test
         run: "ls"
       - name: Checkout frontend repo TeachUAClient
