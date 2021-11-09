@@ -9,3 +9,5 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: ita-social-projects/TeachUAClient
+      - name:
+        run : "ls -la"
