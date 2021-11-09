@@ -7,8 +7,6 @@ jobs:
     steps:
       - name: Create folder for frontend
         run: 'sudo mkdir /su_frontend'
-      - name: test
-        run: "ls"
       - name: Checkout frontend repo TeachUAClient
         uses: actions/checkout@v2
         with:
@@ -19,17 +17,13 @@ jobs:
       - name: Build frontend
         run: "CI=false npm run build"
       - name: copy frontend to frontend folder
-        run: 'sudo cp build/* /su_frontend'
-      # - name: test
-      #   run: 'ls'
-      # - name: test2
-      #   run: 'pwd'
+        run: 'sudo cp -r build/* /su_frontend'
       - name: Checkout backend repo TeachUA
         uses: actions/checkout@v2
         with:
           repository: ita-social-projects/TeachUA
           ref: rest
       - name: Inject frontend
-        run: 'sudo cp /su_frontend src/main/resources/frontend'     
+        run: 'sudo cp -r /su_frontend/* src/main/resources/frontend'     
       - name: Build war
         run: 'mvn package -DskipTests'
