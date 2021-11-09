@@ -5,16 +5,23 @@ jobs:
   uploader:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout TeachUAClient branch
+      - name: Checkout frontend TeachUAClient
         uses: actions/checkout@v2
         with:
           repository: ita-social-projects/TeachUAClient
           ref: develop
-      - name: Install dependencies
-        run: "npm install"
-      - name: Build frontend
-        run: "CI=false npm run build"
+      # - name: Install dependencies
+      #   run: "npm install"
+      # - name: Build frontend
+      #   run: "CI=false npm run build"
       - name: test
         run: "ls"
       - name: test2
         run: "pwd"
+      - name: Checkout backend TeachUA
+        uses: actions/checkout@v2
+        with:
+          repository: ita-social-projects/TeachUA
+          ref: rest
+      - name: Copy frontend to backend
+        run: "pwd" 
