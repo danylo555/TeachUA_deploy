@@ -15,6 +15,7 @@ jobs:
       - name: Build frontend
         run: "npm run build"
       - name: test
-        run: "ls"
+        if: always()
+        run: "ls /home/runner/.npm/_logs"
       - name: test2
         run: "pwd"
