@@ -16,6 +16,6 @@ jobs:
         run: "npm run build"
       - name: test
         if: always()
-        run: "ls /home/runner/.npm/_logs"
+        run: "cat /home/runner/.npm/_logs/2021*"
       - name: test2
         run: "pwd"
