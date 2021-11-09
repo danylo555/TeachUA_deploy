@@ -7,6 +7,8 @@ jobs:
     steps:
       - name: Create folder for frontend
         run: 'mkdir su_frontend'
+      - name: test
+        run: "ls"
       - name: Checkout frontend repo TeachUAClient
         uses: actions/checkout@v2
         with:
