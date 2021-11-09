@@ -30,6 +30,6 @@ jobs:
           repository: ita-social-projects/TeachUA
           ref: rest
       - name: Inject frontend
-        run 'sudo cp /su_frontend src/main/resources/frontend'     
+        run: 'sudo cp /su_frontend src/main/resources/frontend'     
       - name: Build war
         run: 'mvn package -DskipTests'
