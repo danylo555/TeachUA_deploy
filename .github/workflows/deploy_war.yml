@@ -23,5 +23,7 @@ jobs:
         with:
           repository: ita-social-projects/TeachUA
           ref: rest
-      - name: Copy frontend to backend
-        run: "pwd" 
+      - name: test
+        run: "ls"
+      - name: test2
+        run: "pwd"
