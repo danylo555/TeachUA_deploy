@@ -6,7 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out my other private repo
-        uses: actions/checkout@develop
+        uses: actions/checkout@v2
         with:
-          name: ita-social-projects/TeachUAClient
-          ref: refs/heads/release
+          repository: ita-social-projects/TeachUAClient
