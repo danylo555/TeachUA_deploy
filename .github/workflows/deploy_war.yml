@@ -8,6 +8,8 @@ jobs:
       - name: Check out my other private repo
         uses: actions/checkout@v2
         with:
+          ref: develop
+        with:
           repository: ita-social-projects/TeachUAClient
       - name:
         run : "ls -la"
