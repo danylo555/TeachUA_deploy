@@ -1,8 +1,6 @@
 name: Build War
 on:
   push:
-    tags:
-       - 'deploy_dev'
 jobs:
   uploader:
     runs-on: ubuntu-latest
