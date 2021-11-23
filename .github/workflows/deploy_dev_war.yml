@@ -31,6 +31,8 @@ jobs:
         run: 'ls -la target'
       - name: Test location 2
         run: 'pwd'
+      - name: Test location 2
+        run: 'ls -la /home/runner/work/TeachUA_deploy/TeachUA_deploy/target'
 #       - name: Copy results to the remote host over SSH
 #         uses: appleboy/scp-action@master
 #         with:
