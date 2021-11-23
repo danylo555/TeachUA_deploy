@@ -33,12 +33,12 @@ jobs:
         run: 'pwd'
       - name: Test location 3
         run: 'ls -la /home/runner/work/TeachUA_deploy/TeachUA_deploy/target'
-#       - name: Copy results to the remote host over SSH
-#         uses: appleboy/scp-action@master
-#         with:
-#           host: ${{ secrets.HOST }}
-#           username: ${{ secrets.USER }}
-#           key: ${{ secrets.SSH_PRIVATE_KEY }}
-#           port: ${{ secrets.PORT }}
-#           source: "target/dev.war"
-#           target: "/root/deploy"
+      - name: Copy results to the remote host over SSH
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.PORT }}
+          source: "/home/runner/work/TeachUA_deploy/TeachUA_deploy/target/dev.war"
+          target: "/root/deploy"
