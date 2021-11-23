@@ -40,5 +40,5 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.PORT }}
-          source: "/home/runner/work/TeachUA_deploy/TeachUA_deploy/target/dev.war"
-          target: "/root/deploy"
+          source: "target/dev.war"
+          target: "/root/deploy/"
