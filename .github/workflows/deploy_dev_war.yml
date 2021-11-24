@@ -13,6 +13,9 @@ jobs:
         with:
           repository: ita-social-projects/TeachUAClient
           ref: develop
+      
+      - name: Fix env vars
+        run: echo "PUBLIC_URL=/dev" >> .env.production  
           
       - name: Install dependencies
         run: "npm install"
