@@ -46,5 +46,13 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.PORT }}
           source: "target/dev.war"
-          target: "/root/deploy/"
+          target: "/opt/tomcat/latest/webapps/"
           strip_components: 1
+          
+      - name: Change permissions to tomcat user
+        uses: garygrossgarten/github-action-ssh@release
+        with:
+          command: chown -R tomcat:tomcat /opt/tomcat
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          privateKey: ${{ secrets.SSH_PRIVATE_KEY}}
