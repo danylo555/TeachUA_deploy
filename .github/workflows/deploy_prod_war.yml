@@ -28,8 +28,9 @@ jobs:
         with:
           repository: ita-social-projects/TeachUA
           ref: rest
-      - name: Inject frontend
-        run: "sudo sed -i '' 's/spring.profiles.active=.*/spring.profiles.active=prod/' src/main/resources/application.properties"
+          
+      - name: Change properties to prod
+        run: "sudo sed -i 's/spring.profiles.active=.*/spring.profiles.active=prod/' src/main/resources/application.properties"
         
       - name: Inject frontend
         run: 'sudo cp -r /su_frontend/* src/main/resources/frontend'
