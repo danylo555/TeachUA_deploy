@@ -49,18 +49,18 @@ jobs:
           target: "/root/deploy"
           strip_components: 1
           
-      - name: Rename var
+      - name: Move to tomcat server
         uses: garygrossgarten/github-action-ssh@release
         with:
-          command: mv /root/deploy/dev.war /root/deploy/ROOT.war
+          command: mv /root/deploy/dev.war /opt/tomcat/latest/webapps/ROOT.war
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           privateKey: ${{ secrets.SSH_PRIVATE_KEY}}
           
-#       - name: Change permissions to tomcat user
-#         uses: garygrossgarten/github-action-ssh@release
-#         with:
-#           command: chown -R tomcat:tomcat /opt/tomcat
-#           host: ${{ secrets.HOST }}
-#           username: ${{ secrets.USER }}
-#           privateKey: ${{ secrets.SSH_PRIVATE_KEY}}
+      - name: Change permissions to tomcat user
+        uses: garygrossgarten/github-action-ssh@release
+        with:
+          command: chown -R tomcat:tomcat /opt/tomcat
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          privateKey: ${{ secrets.SSH_PRIVATE_KEY}}
