@@ -13,10 +13,7 @@ jobs:
         with:
           repository: ita-social-projects/TeachUAClient
           ref: develop
-      
-      - name: Fix env vars
-        run: echo "PUBLIC_URL=/dev" >> .env.production  
-          
+                
       - name: Install dependencies
         run: "npm install"
         
@@ -32,7 +29,7 @@ jobs:
           repository: ita-social-projects/TeachUA
           ref: rest
       - name: Inject frontend
-        run: 'sudo sed -i '' 's/spring.profiles.active=.*/spring.profiles.active=prod/' src/main/resources/application.properties'
+        run: "sudo sed -i '' 's/spring.profiles.active=.*/spring.profiles.active=prod/' src/main/resources/application.properties"
         
       - name: Inject frontend
         run: 'sudo cp -r /su_frontend/* src/main/resources/frontend'
