@@ -1,6 +1,9 @@
 name: Deploy to dev
 on:
   workflow_dispatch:
+  pull_request:
+    branches:
+      - test
 jobs:
   prcheck:
     runs-on: ubuntu-latest
