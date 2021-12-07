@@ -7,10 +7,7 @@ on:
 jobs:
   prcheck:
     runs-on: ubuntu-latest
-    steps:
-      - name: Test
-        run: 'npm -v'
-        
+    steps:       
       - name: Create folder for frontend
         run: 'sudo mkdir /su_frontend'
         
@@ -24,7 +21,7 @@ jobs:
         run: echo "PUBLIC_URL=/dev" >> .env.production  
           
       - name: Install dependencies
-        run: "npm install"
+        run: "npm install --legacy-peer-deps"
         continue-on-error: true
       
       - name: Test
