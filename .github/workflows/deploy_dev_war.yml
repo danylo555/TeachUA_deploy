@@ -8,7 +8,7 @@ jobs:
   prcheck:
     runs-on: ubuntu-latest
     steps:
-     - name: Test
+      - name: Test
         run: 'npm -v'
         
       - name: Create folder for frontend
