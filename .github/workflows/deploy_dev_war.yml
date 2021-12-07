@@ -23,13 +23,7 @@ jobs:
       - name: Install dependencies
         run: "npm install --legacy-peer-deps"
         continue-on-error: true
-      
-      - name: Test
-        run: "cat /home/runner/.npm/_logs/2021-12-07T*"
-      
-      - name: Test 2
-        run: "cat /home/runner/.npm/eresolve-report.txt"
-        
+
       - name: Build frontend
         run: "CI=false npm run build"
         
